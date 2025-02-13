@@ -1,0 +1,38 @@
+{
+  "extends": "@packages/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@packages/ui": ["../../packages/ui/src"],
+      "@packages/ui/*": ["../../packages/ui/src/*"],
+
+      "@components": ["./src/components"],
+      "@components/ui": ["./src/components/ui"],
+      "@components/common": ["./src/components/common"],
+      "@components/*": ["./src/components/*"],
+      "@constants": ["./src/constants"],
+      "@constants/*": ["./src/constants/*"],
+      // "@assets/*": ["./src/assets/*"],
+      "@hooks": ["./src/hooks"],
+      "@utils": ["./src/utils"],
+      "@stores": ["./src/stores"],
+      "@types": ["./src/types"],
+      "@app": ["./src/app"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "next.config.mjs",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+}

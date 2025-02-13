@@ -1,0 +1,30 @@
+{
+  "extends": "@packages/typescript-config/nextjs.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@packages/ui": ["../../packages/ui/src"],
+      "@components": ["./components"],
+      "@components/ui": ["./components/ui"],
+      "@components/common": ["./components/common"],
+      "@components/*": ["./components/*"],
+      "@constants": ["./constants"],
+      "@constants/*": ["./constants/*"],
+      "@assets/*": ["./assets/*"],
+      "@hooks": ["./hooks"],
+      "@utils": ["./utils"],
+      "@stores": ["./stores"],
+      "@types": ["./types"],
+      "@app": ["./app"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "isolatedModules": true
+  },
+  "include": ["next-env.d.ts", "kakao.maps.d.ts", "next.config.mjs", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
