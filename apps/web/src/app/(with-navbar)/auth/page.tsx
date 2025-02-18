@@ -22,8 +22,8 @@ function SearchParamsComponent({ onLogin }: { onLogin: () => void }) {
 }
 
 export default function LoginPage() {
-  const handleGoogleLogin = () => {
-    signIn('google', {
+  const handleGoogleLogin = async () => {
+    await signIn('google', {
       callbackUrl: '/',
       redirect: true
     })

@@ -38,7 +38,7 @@ export function StudyTag({ filter }: { filter: string }) {
           router.push(`/study?filter=${tag}`)
         }
       }}
-      className={cn('cursor-pointer px-4 py-1 text-base text-gray-600 text-nowrap rounded-full', filter === tag && 'bg-black text-white')}
+      className={cn('cursor-pointer  px-4 py-1 text-base text-gray-600 text-nowrap rounded-full', filter === tag && 'bg-black text-white')}
       key={tag}
     >
       {tag}

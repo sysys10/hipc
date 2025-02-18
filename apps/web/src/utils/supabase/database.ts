@@ -6,7 +6,6 @@ import { SupabaseClient } from '@supabase/supabase-js'
  */
 const getDataFromTable = async <T>(supabase: SupabaseClient, table: string): Promise<T[]> => {
   const { data, error } = await supabase.from(table).select('*').order('created_at', { ascending: false })
-  console.log(data, error)
   if (error) {
     throw error
   }

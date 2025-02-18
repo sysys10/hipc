@@ -7,7 +7,6 @@ import { SupabaseClient } from '@supabase/supabase-js'
  */
 const getImageUrl = async (supabase: SupabaseClient, storageName: string, noticeId: string): Promise<string> => {
   const { data } = await supabase.storage.from(storageName).getPublicUrl(`notice/${noticeId}/1.png`)
-  console.log(data)
   return data.publicUrl
 }
 

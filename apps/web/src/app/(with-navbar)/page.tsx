@@ -1,4 +1,6 @@
 import { AboutButton, AnimatedCodeEditor, CalendarView, HIPCicon } from '@/components'
+import FallingCode from '@/components/ui/Main/FallingCode'
+import GradientText from '@/components/ui/Main/GradientText'
 import StatGrid from '@/components/ui/Main/Stat'
 import Map from '@/components/ui/Map/Map'
 import Link from 'next/link'
@@ -8,7 +10,6 @@ import { H0, H1, H2 } from '@packages/ui/components/typography'
 export default async function Home() {
   return (
     <div className='w-full h-full justify-center items-center cursor-default bg-background-main text-text'>
-      {/* <div className='min-h-[calc(100vh-var(--navbar-height))] py-10 flex flex-col justify-center relative px-4 bg-gradient-to-br from-[#003B4A] via-[#000814] to-[#003B4A]'> */}
       <div className='min-h-[calc(100vh-var(--navbar-height))] flex flex-col justify-center relative px-4 bg-gradient-to-br from-[var(--main-bg)] via-[#000814] to-[#003B4A]'>
         <div className='max-w-5xl mx-auto pt-20 md:pt-10'>
           <div className='text-transparent text-center bg-clip-text font-normal bg-gradient-to-br from-white to-sky-200 xl:space-y-4 space-y-2'>
@@ -53,6 +54,8 @@ export default async function Home() {
           </a>
         </div>
       </div>
+      {/* <GradientText /> */}
+
       <div className='flex flex-col h-[40rem] px-2 md:px-4 md:h-[50rem] mt-10 md:mt-16'>
         <h1 className='text-4xl text-center font-semibold md:mb-8 mb-4 text-infosys-purple'>HIPC 일정</h1>
         <CalendarView />

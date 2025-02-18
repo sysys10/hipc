@@ -43,7 +43,7 @@ export function AssignStudy({ id, name }: { id: string; name: string }) {
         }
       }
       fetchStudy()
-    }, 100) // 짧은 지연 추가
+    }, 100)
 
     return () => {
       isSubscribed = false

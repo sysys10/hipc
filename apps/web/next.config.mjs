@@ -29,6 +29,20 @@ const nextConfig = {
         pathname: '/**'
       }
     ]
-  }
+  },
+  experimental: {
+    serverActions: true
+  },
+  headers: async () => [
+    {
+      source: '/api/auth/:path*',
+      headers: [
+        {
+          key: 'Cache-Control',
+          value: 'no-store, max-age=0'
+        }
+      ]
+    }
+  ]
 }
 export default nextConfig

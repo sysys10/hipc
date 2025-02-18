@@ -5,6 +5,12 @@ const config = {
   content: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}', '../../packages/ui/src/components/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
   theme: {
     extend: {
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-shape, circle) at var(--tw-gradient-position, center), var(--tw-gradient-from), var(--tw-gradient-to))'
+      },
+      fontSize: {
+        'headline-4': ['2.5rem', '1.2'] // 40px with 1.2 line height
+      },
       aspectRatio: {
         '10/16': '10 / 16',
         '16/10': '16 / 10'
@@ -25,6 +31,8 @@ const config = {
         nanum: ['var(--font-nanum)']
       },
       colors: {
+        'navy-dark': '#000814',
+        'teal-dark': '#003B4A',
         infosys: {
           purple: 'var(--infosys-purple)',
           blue: 'var(--infosys-blue)',

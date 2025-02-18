@@ -16,7 +16,7 @@ export default function StudyContainer() {
     <>
       <div className='flex justify-between items-center mb-8'>
         <div className='flex gap-4 items-end justify-between w-full'>
-          <div className='flex gap-2 overflow-x-auto'>
+          <div className='flex gap-2 overflow-x-auto max-md:text-nowrap max-md:flex-wrap'>
             <StudyTag filter={filter} />
           </div>
           <div className='flex shrink-0 items-center gap-2 max-lg:hidden'>
