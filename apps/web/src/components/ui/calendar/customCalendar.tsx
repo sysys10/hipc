@@ -49,7 +49,7 @@ const CustomEvent = ({ event }: { event: Event }) => {
   return (
     <Popover>
       <PopoverTrigger className='w-full h-full px-1 cursor-pointer overflow-hidden text-black text-ellipsis'>{event.title}</PopoverTrigger>
-      <PopoverContent className='w-80'>
+      <PopoverContent className='w-80 text-black'>
         <div className='space-y-4'>
           <div>
             <h3 className='font-medium mb-1'>{event.title}</h3>

@@ -32,11 +32,11 @@ const buttonVariants = cva(
       `,
         // Outlined
         outline: `
-          border border-gray-500 text-gray-900 
-          bg-gray-100
-          hover:bg-gray-150
-          active:bg-gray-300
-          after:content-[''] after:absolute after:inset-0 after:bg-current after:opacity-0 
+          border border-gray-500/50 text-text-1
+          bg-background
+          hover:bg-background-secondary
+          active:bg-background-secondary
+          after:content-[''] after:absolute after:inset-0 after:bg-current after:opacity-0
           hover:after:opacity-[0.04] after:transition-opacity`,
 
         // Text

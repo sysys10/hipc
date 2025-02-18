@@ -1,6 +1,6 @@
-import { KakaoMap } from './kakaomap'
+import { KakaoMap } from './KakaoMap'
 
-export async function Map() {
+export default function Map() {
   return (
     <div className='w-full max-w-3xl mx-auto px-4'>
       <div className='w-full aspect-video rounded-lg overflow-hidden shadow-lg'>

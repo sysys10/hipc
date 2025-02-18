@@ -1,6 +1,5 @@
 'use client'
 
-import { generatePaginationItems } from '@/components/ui'
 import { NoticeType } from '@/types'
 import { formatDate } from '@/utils'
 import Link from 'next/link'
@@ -50,7 +49,6 @@ export function NoticeTable({ notices }: { notices: NoticeType[] }) {
             <PaginationItem>
               <PaginationPrevious onClick={() => setCurrentPage((prev) => Math.max(1, prev - 1))} className={currentPage === 1 ? 'pointer-events-none opacity-50' : ''} />
             </PaginationItem>
-            {generatePaginationItems({ currentPage, totalPages, setCurrentPage })}
             <PaginationItem>
               <PaginationNext
                 onClick={() => setCurrentPage((prev) => Math.min(totalPages, prev + 1))}

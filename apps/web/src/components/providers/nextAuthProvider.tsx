@@ -14,10 +14,10 @@ type Props = {
 function SessionSync() {
   const { data: session } = useSession()
   const setUser = useUserStore((state) => state.setUser)
-
   useEffect(() => {
     if (session?.user) {
       setUser({
+        id: session.user.id,
         email: session.user.email,
         name: session.user.name,
         image: session.user.image,

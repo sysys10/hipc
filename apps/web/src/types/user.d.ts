@@ -5,4 +5,5 @@ export interface User {
   id?: string | null
   profile_completed?: boolean | null
   boj_handle?: string | null
+  boj_tier?: number | null
 }

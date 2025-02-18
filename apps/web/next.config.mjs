@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   transpilePackages: ['@packages/ui'],
   images: {
@@ -30,5 +31,4 @@ const nextConfig = {
     ]
   }
 }
-
 export default nextConfig

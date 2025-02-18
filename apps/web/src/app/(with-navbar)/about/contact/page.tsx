@@ -1,4 +1,4 @@
-import { Map } from '@/components/ui/map/map'
+import Map from '@/components/ui/Map/Map'
 
 export default async function Contact() {
   return (

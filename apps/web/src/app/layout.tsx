@@ -1,5 +1,5 @@
 import { AuthProvider } from '@components/providers/nextAuthProvider'
-import { ThemeProvider } from '@components/providers/themeProvider'
+// import { ThemeProvider } from '@components/providers/themeProvider'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { ToastContainer } from 'react-toastify'
@@ -39,10 +39,7 @@ const pretendard = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'INFOSYS24',
-  icons: {
-    icon: '/favicon.svg'
-  }
+  title: 'HIPC'
 }
 
 export default async function RootLayout({
@@ -53,9 +50,7 @@ export default async function RootLayout({
   return (
     <html lang='ko' suppressHydrationWarning>
       <body className={`${pretendard.variable} ${cafe24ssurround.variable} bg-background antialiased min-h-screen`}>
-        <ThemeProvider>
-          <AuthProvider>{children}</AuthProvider>
-        </ThemeProvider>
+        <AuthProvider>{children}</AuthProvider>
         <ToastContainer className={'text-base'} position='bottom-right' />
         <div id='modal-root' />
       </body>

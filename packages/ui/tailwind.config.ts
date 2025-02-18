@@ -55,6 +55,7 @@ const config = {
         background: {
           DEFAULT: 'var(--background-1)',
           secondary: 'var(--background-2)',
+          main: 'var(--background-main)',
           tertiary: 'var(--background-3)',
           disabled: 'var(--background-disabled)',
           navbar: 'var(--navbar-background)',

@@ -1,5 +1,5 @@
+import { NoticeTable } from '@/components/ui/notice'
 import { getNoticesWithDetails } from '@/services'
-import { NoticeTable } from '@components/ui'
 import { Suspense } from 'react'
 
 export default async function NoticePage() {

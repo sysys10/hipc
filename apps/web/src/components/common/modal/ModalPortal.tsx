@@ -3,6 +3,8 @@
 import { useMounted } from '@/hooks'
 import { createPortal } from 'react-dom'
 
+import cn from '@packages/ui/lib/utils'
+
 import { HIPCicon } from '../icon'
 
 interface ModalPortalProps {
@@ -18,10 +20,9 @@ function ModalPortal({ isOpen, handleClose, children, className }: ModalPortalPr
   if (!isMounted || !isOpen) return null
   const modalRoot = document.getElementById('modal-root') as HTMLElement
   return createPortal(
-    <div className='fixed inset-0 z-50 bg-black/60 ' onClick={handleClose}>
+    <div className='fixed inset-0 z-50 bg-black/20 ' onClick={handleClose}>
       <div
-        className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
-                  bg-background-secondary text-text rounded-lg border-border p-4  ${className} `}
+        className={cn('absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white text-text rounded-lg border-border p-4', className)}
         onClick={(e) => e.stopPropagation()}
       >
         <div className='absolute top-0 right-0 p-3'>

@@ -1,4 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon, HomeIcon, LogOutIcon, MoonIcon, SendIcon, SettingsIcon, SunIcon, UserIcon, XIcon } from 'lucide-react'
+import { ChevronLeftIcon, ChevronRightIcon, HomeIcon, LogOutIcon, MoonIcon, SearchIcon, SendIcon, SettingsIcon, SunIcon, UserIcon, XIcon } from 'lucide-react'
 import React from 'react'
 import { forwardRef } from 'react'
 
@@ -27,7 +27,8 @@ const icons = {
   home: createIcon(<HomeIcon />),
   user: createIcon(<UserIcon />),
   settings: createIcon(<SettingsIcon />),
-  send: createIcon(<SendIcon />)
+  send: createIcon(<SendIcon />),
+  search: createIcon(<SearchIcon />)
 }
 
 export type IconName = keyof typeof icons

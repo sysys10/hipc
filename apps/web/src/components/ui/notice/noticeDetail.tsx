@@ -1,11 +1,5 @@
-'use client'
-
-import { getImageUrlsByNoticeId, getNoticeById } from '@/utils'
-import supabase from '@/utils/supabase/supabase'
 import { format } from 'date-fns'
 import { EyeIcon, ThumbsUpIcon } from 'lucide-react'
-import Image from 'next/image'
-import { useEffect, useState } from 'react'
 
 import { AspectRatio } from '@packages/ui/components/aspect-ratio'
 import { Badge } from '@packages/ui/components/badge'
@@ -25,28 +19,8 @@ interface NoticeDetailProps {
   imageUrls: string[]
 }
 
-export const NoticeDetail = ({ noticeId }: { noticeId: string }) => {
-  const [notice, setNotice] = useState<NoticeDetailProps['notice'] | null>(null)
-  const [imageUrls, setImageUrls] = useState<string[]>([])
-
-  useEffect(() => {
-    async function fetchNotice() {
-      try {
-        const supabaseClient = supabase()
-        const notice = await getNoticeById(supabaseClient, noticeId)
-        const imageUrls = await getImageUrlsByNoticeId(supabaseClient, noticeId)
-        setNotice(notice)
-        setImageUrls(imageUrls)
-      } catch (error) {
-        console.error('Error fetching notice:', error)
-      }
-    }
-    fetchNotice()
-  }, [noticeId])
-
+export const NoticeDetail = ({ notice, imageUrls }: NoticeDetailProps) => {
   console.log('==========imageUrls==========\n', imageUrls)
-  if (!notice) return <div>공지사항이 없습니다.</div>
-
   const formattedDate = format(new Date(notice.created_at), 'yyyy.MM.dd HH:mm')
   const contentLines = notice.content.split('\n')
   return (
@@ -77,11 +51,10 @@ export const NoticeDetail = ({ noticeId }: { noticeId: string }) => {
           <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-6'>
             {imageUrls.map((url, index) => (
               <AspectRatio key={index} ratio={1 / 1}>
-                <Image
+                <img
                   src={`${process.env.NEXT_PUBLIC_SUPABASE_URL}/storage/v1/object/public/image/notice/${notice.noticeId}/${url}`}
                   alt={`공지사항 이미지 ${index + 1}`}
                   className='rounded-md object-cover w-full h-full'
-                  fill
                 />
               </AspectRatio>
             ))}

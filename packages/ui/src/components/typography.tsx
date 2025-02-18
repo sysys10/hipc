@@ -6,7 +6,7 @@ interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
 
 export function H0({ children, className, ...props }: HeaderProps) {
   return (
-    <h1 className={cn('scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-6xl', className)} {...props}>
+    <h1 className={cn('scroll-m-20 text-5xl font-extrabold tracking-tight lg:text-6xl 2xl:text-7xl', className)} {...props}>
       {children}
     </h1>
   )
@@ -22,7 +22,7 @@ export function H1({ children, className, ...props }: HeaderProps) {
 
 export function H2({ children, className, ...props }: HeaderProps) {
   return (
-    <h2 className={cn('scroll-m-20 text-xl md:text-2xl lg:text-3xl font-semibold tracking-tight first:mt-0', className)} {...props}>
+    <h2 className={cn('scroll-m-20 text-xl md:text-2xl lg:text-3xl 2xl:text-4xl font-semibold tracking-tight first:mt-0', className)} {...props}>
       {children}
     </h2>
   )

@@ -7,8 +7,8 @@ import { Event } from '@types'
 
 import { getDataFromTable } from '@utils'
 
+import { CustomCalendar } from './CustomCalendar'
 import './calendar.css'
-import { CustomCalendar } from './customCalendar'
 
 export function CalendarView() {
   const supabase = supabaseClient()
@@ -32,7 +32,7 @@ export function CalendarView() {
   }, [supabase])
   return (
     <div className='calendar-wrapper h-full max-w-5xl mx-auto w-full'>
-      <div className='calendar-container bg-gray-50 rounded-md h-full'>
+      <div className='calendar-container rounded-md h-full'>
         <CustomCalendar events={events} />
       </div>
     </div>
