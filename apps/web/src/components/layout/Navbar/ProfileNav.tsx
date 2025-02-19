@@ -49,7 +49,7 @@ export function ProfileNav() {
               </PopoverContent>
             </Popover>
           ) : (
-            <div className='flex items-center gap-x-2' onClick={() => router.push('/login')}>
+            <div className='flex items-center gap-x-2' onClick={() => router.push('/login?modal=login')}>
               <Image src={'/assets/images/HIPC_DEFAULT_PROFILE.png'} alt='profile' width={32} height={32} className='rounded-full' />
               <HIPCicon name='chevronLeft' iconClassName='w-5 h-5 -rotate-90' />
             </div>

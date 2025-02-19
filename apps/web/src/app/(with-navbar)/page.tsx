@@ -1,5 +1,4 @@
 import { AboutButton, AnimatedCodeEditor, CalendarView, HIPCicon } from '@/components'
-import FallingCode from '@/components/ui/Main/FallingCode'
 import GradientText from '@/components/ui/Main/GradientText'
 import StatGrid from '@/components/ui/Main/Stat'
 import Map from '@/components/ui/Map/Map'
@@ -54,7 +53,7 @@ export default async function Home() {
           </a>
         </div>
       </div>
-      {/* <GradientText /> */}
+      <GradientText />
 
       <div className='flex flex-col h-[40rem] px-2 md:px-4 md:h-[50rem] mt-10 md:mt-16'>
         <h1 className='text-4xl text-center font-semibold md:mb-8 mb-4 text-infosys-purple'>HIPC 일정</h1>

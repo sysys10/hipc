@@ -97,7 +97,7 @@ function MobileNavMenu() {
             ) : (
               <button
                 onClick={() => {
-                  router.push('/login')
+                  router.push('/login?modal=login')
                   setIsOpen(false)
                 }}
                 className='w-full py-2 px-4 bg-background text-text rounded-lg'

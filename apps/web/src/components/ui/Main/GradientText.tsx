@@ -2,73 +2,50 @@
 
 import React, { useEffect, useState } from 'react'
 
-import FallingCode from './FallingCode'
+import cn from '@packages/ui/lib/utils'
 
 const GradientText = () => {
   const [scrollPosition, setScrollPosition] = useState(0)
+  const [shape, setShape] = useState({ x: 25, y: 123.22484 })
+  const [position, setPosition] = useState({ x: -100, y: 50 })
 
   useEffect(() => {
     const handleScroll = () => {
       const position = window.scrollY
       setScrollPosition(position)
+
+      const newShapeX = position * 0.05
+      const newShapeY = 0 + position * 0.1
+      const newPositionX = position * 0.08
+
+      setShape({ x: newShapeX, y: newShapeY })
+      setPosition({ x: newPositionX, y: 50 })
     }
 
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Calculate shape and position based on scroll
-  const shape = `${25 + scrollPosition / 20}% ${150 + scrollPosition / 10}%`
-  const position = `${50 + scrollPosition / 30}% 50%`
-
-  // Calculate color brightness based on scroll
-  const startColor = '#333333'
-  const endColor = '#FFFFFF'
-
-  // Calculate interpolation factor (0 to 1) based on scroll position
-  const scrollFactor = Math.min(scrollPosition / 1000, 1)
-
-  // Function to interpolate between two hex colors
-  const interpolateColor = (start: string, end: string, factor: number) => {
-    // Convert hex to RGB
-    const startRGB = {
-      r: parseInt(start.slice(1, 3), 16),
-      g: parseInt(start.slice(3, 5), 16),
-      b: parseInt(start.slice(5, 7), 16)
-    }
-    const endRGB = {
-      r: parseInt(end.slice(1, 3), 16),
-      g: parseInt(end.slice(3, 5), 16),
-      b: parseInt(end.slice(5, 7), 16)
-    }
-
-    // Interpolate RGB values
-    const resultRGB = {
-      r: Math.round(startRGB.r + (endRGB.r - startRGB.r) * factor),
-      g: Math.round(startRGB.g + (endRGB.g - startRGB.g) * factor),
-      b: Math.round(startRGB.b + (endRGB.b - startRGB.b) * factor)
-    }
-
-    // Convert back to hex
-    return `#${resultRGB.r.toString(16).padStart(2, '0')}${resultRGB.g.toString(16).padStart(2, '0')}${resultRGB.b.toString(16).padStart(2, '0')}`
+  const gradientStyle = {
+    '--shape': `${shape.x}% ${shape.y}%`,
+    '--position': `${position.x}% ${position.y}%`
   }
 
-  const gradientColor = interpolateColor(startColor, endColor, scrollFactor)
-
   return (
-    <div className='bg-black py-96 relative w-full' style={{ height: '300vh' }}>
-      <h1
-        className='text-8xl font-bold text-center sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-transparent'
-        style={{
-          backgroundImage: `radial-gradient(${shape} at ${position}, ${gradientColor}, #1B1B1C)`,
-          WebkitBackgroundClip: 'text',
-          backgroundClip: 'text',
-          display: 'inline-block'
-        }}
-      >
-        하루 한문제씩
-      </h1>
-      <FallingCode />
+    <div className='h-[300vh] bg-black py-20 relative'>
+      <div className='sticky top-0 h-lvh w-full'>
+        <div className='relative flex h-full w-full flex-col items-center justify-center'>
+          <h2
+            className={cn('block text-center text-4xl font-bold text-transparent bg-clip-text', `bg-[radial-gradient(var(--shape)_at_var(--position),#FFF,#1B1B1C)]`)}
+            style={{
+              ...gradientStyle,
+              WebkitBackgroundClip: 'text'
+            }}
+          >
+            하루 한문제씩
+          </h2>
+        </div>
+      </div>
     </div>
   )
 }

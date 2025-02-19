@@ -14,7 +14,7 @@ export async function middleware(request: NextRequest) {
     secret: process.env.NEXT_PUBLIC_AUTH_SECRET || ''
   })
   if (!token?.email && pathname.startsWith('/assign')) {
-    const redirectUrl = new URL('/login', request.url)
+    const redirectUrl = new URL('/login?modal=login', request.url)
     return NextResponse.redirect(redirectUrl, 302)
   }
 
