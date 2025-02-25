@@ -110,9 +110,9 @@ export function AssignStudy({ id, name }: { id: string; name: string }) {
           <CardTitle className='text-4xl font-bold text-center'>{name} 참여하기</CardTitle>
           <CardDescription className='text-lg text-center mt-4'>스터디 참여를 위해 아래 정보를 입력해주세요.</CardDescription>
         </CardHeader>
-        <CardContent className='max-w-3xl mx-auto w-full'>
+        <CardContent className='max-w-3xl mx-auto w-full px-4'>
           <form onSubmit={handleSubmit} className='space-y-8'>
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               <Label htmlFor='baekjoonHandle' className='text-lg font-medium'>
                 백준 핸들
               </Label>
@@ -135,25 +135,25 @@ export function AssignStudy({ id, name }: { id: string; name: string }) {
               )}
             </div>
 
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               <Label htmlFor='nickname' className='text-lg font-medium'>
                 닉네임
               </Label>
-              <Input id='nickname' name='nickname' placeholder='사용하실 닉네임을 입력하세요' value={formData.nickname} onChange={handleChange} required className='h-12 text-lg' />
+              <Input id='nickname' name='nickname' placeholder='사용하실 닉네임을 입력하세요' value={formData.nickname} onChange={handleChange} required className='h-20 text-lg' />
             </div>
 
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               <Label htmlFor='studentId' className='text-lg font-medium'>
                 학번
               </Label>
-              <Input id='studentId' name='studentId' placeholder='학번을 입력하세요' value={formData.studentId} onChange={handleChange} required className='h-12 text-lg' />
+              <Input id='studentId' name='studentId' placeholder='학번을 입력하세요' value={formData.studentId} onChange={handleChange} required className='h-20 text-lg' />
             </div>
 
-            <div className='space-y-2'>
+            <div className='space-y-1'>
               <Label htmlFor='realName' className='text-lg font-medium'>
                 본명
               </Label>
-              <Input id='realName' name='realName' placeholder='본명을 입력하세요' value={formData.realName} onChange={handleChange} required className='h-12 text-lg' />
+              <Input id='realName' name='realName' placeholder='본명을 입력하세요' value={formData.realName} onChange={handleChange} required className='h-20 text-lg' />
             </div>
 
             <Button type='submit' className='w-full h-12 text-lg font-medium mt-8'>
