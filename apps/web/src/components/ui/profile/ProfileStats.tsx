@@ -30,7 +30,7 @@ function getTier(tier: number) {
 
 export function ProfileStats({ user }: { user: User | null }) {
   return (
-    <div className='flex flex-col rounded-lg px-4 items-center w-full mx-auto bg-white  transition-shadow duration-300 py-6 space-y-4'>
+    <div className='flex flex-col rounded-lg px-4 items-center w-full mx-auto transition-shadow duration-300 py-6 space-y-4'>
       <div className='flex items-start space-x-4 w-full px-2 mb-4'>
         <div className='relative'>
           <ProfileImg width={60} image={user?.image || '/assets/images/HIPC_DEFAULT_PROFILE.png'} />

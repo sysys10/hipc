@@ -14,26 +14,24 @@ export default function Footer() {
               </p>
               <p className='flex items-center'>
                 <span className='mr-2'>📞</span>
-                +82 02-1234-5678
+                +82 010-9666-1332
               </p>
               <p className='flex items-center'>
                 <span className='mr-2'>✉️</span>
-                contact@example.com
+                ys1014@hanyang.ac.kr
               </p>
             </div>
           </div>
 
           <div>
             <h3 className='text-lg font-semibold mb-4'>About Us</h3>
-            <p className='text-sm leading-relaxed'>
-              We are dedicated to providing innovative solutions and exceptional service to our clients. Our mission is to create value through technology and human connection.
-            </p>
+            <p className='text-sm leading-relaxed'>Hanyang University Infosys Problem-Solving Club HIPC</p>
           </div>
 
           <div>
             <h3 className='text-lg font-semibold mb-4'>Connect With Us</h3>
             <div className='flex space-x-4'>
-              <Link href='https://github.com/your-org' target='_blank' rel='noopener noreferrer' className='hover:text-primary'>
+              <Link href='https://github.com/sysys10' target='_blank' rel='noopener noreferrer' className='hover:text-primary'>
                 <span className='sr-only'>GitHub</span>
                 <svg className='h-6 w-6' fill='currentColor' viewBox='0 0 24 24'>
                   <path

@@ -1,2 +1,2 @@
 export * from './AnimatedCodeEditor'
-export * from './AboutButton'
+export * from './StudyButton'

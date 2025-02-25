@@ -3,6 +3,7 @@
 const nextConfig = {
   transpilePackages: ['@packages/ui'],
   images: {
+    formats: ['image/avif', 'image/webp'], // AVIF 우선 사용
     remotePatterns: [
       {
         protocol: 'https',

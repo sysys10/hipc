@@ -5,9 +5,6 @@ const config = {
   content: ['app/**/*.{ts,tsx}', 'components/**/*.{ts,tsx}', '../../packages/ui/src/components/**/*.{ts,tsx}', 'src/**/*.{ts,tsx}'],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-shape, circle) at var(--tw-gradient-position, center), var(--tw-gradient-from), var(--tw-gradient-to))'
-      },
       fontSize: {
         'headline-4': ['2.5rem', '1.2'] // 40px with 1.2 line height
       },
@@ -28,7 +25,9 @@ const config = {
       },
       fontFamily: {
         cafe24: ['var(--font-cafe24)'],
-        nanum: ['var(--font-nanum)']
+        nanum: ['var(--font-nanum)'],
+        blackhans: ['var(--font-blackhans)'],
+        pretendard: ['var(--font-pretendard)']
       },
       colors: {
         'navy-dark': '#000814',

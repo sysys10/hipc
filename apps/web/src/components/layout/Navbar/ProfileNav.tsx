@@ -27,8 +27,8 @@ export function ProfileNav() {
                   <HIPCicon name='chevronLeft' iconClassName='w-5 h-5 -rotate-90' />
                 </div>
               </PopoverTrigger>
-              <PopoverContent className='p-0 mt-6 w-[24rem] rounded-xl overflow-hidden bg-background' align='end'>
-                <div className='flex flex-col gap-y-4 text-text divide-y divide-border'>
+              <PopoverContent className='p-0 mt-6 w-[24rem] rounded-xl overflow-hidden bg-transparent' align='end'>
+                <div className='flex flex-col gap-y-4 text-text divide-y bg-white divide-border'>
                   <ProfileStats user={user} />
                   <ul className='flex flex-col gap-y-4 p-4'>
                     <li>

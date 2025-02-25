@@ -21,7 +21,7 @@ export function StudyCard({ study }: { study: StudyType }) {
       }}
     >
       <div className='rounded-lg shadow-md cursor-pointer text-text overflow-hidden transition-shadow'>
-        <div className='relative h-60 aspect-square w-full'>
+        <div className='relative max-h-60 aspect-square w-full'>
           {study.imgUrl ? (
             <Image src={`${process.env.NEXT_PUBLIC_SUPABASE_STORAGE_URL}${study.imgUrl}`} alt={study.name} fill className='object-cover rounded-t-lg' />
           ) : (
@@ -39,10 +39,9 @@ export function StudyCard({ study }: { study: StudyType }) {
           <div className='flex justify-between items-center mb-2'>
             <h3 className='text-lg font-semibold'>{study.name}</h3>
           </div>
-          <p className='text-gray-tertiary text-sm mb-3'>{study.desc}</p>
-          <div className='flex justify-between items-center text-gray-tertiary'>
-            <span>{study.location}</span>
-            <span>{study.member_cnt}명</span>
+          <div className='flex justify-between items-center'>
+            <p className='text-gray-tertiary text-sm'>{study.desc}</p>
+            <span className='shrink-0'>{study.member_cnt}명</span>
           </div>
           <div className='mt-2 text-sm text-gray-tertiary'>
             {study.startDate} ~ {study.endDate.slice(5, 10)}

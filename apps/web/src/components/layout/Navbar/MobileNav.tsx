@@ -1,6 +1,6 @@
 'use client'
 
-import { HIPCicon, LogoutButton, ModalPortal, ProfileImg, ProfileStats, ThemeToggle } from '@components'
+import { HIPCicon, LogoutButton, ProfileImg, ProfileStats, ThemeToggle } from '@components'
 import { NavigationBarLists } from '@constants'
 import { useUserStore } from '@stores'
 import { useRouter } from 'next/navigation'
@@ -30,19 +30,17 @@ function MobileNavMenu() {
   }, [isOpen])
 
   return (
-    <>
+    <div className='md:hidden'>
       <button onClick={() => setIsOpen(true)} className='md:hidden'>
         <ProfileImg image={user?.image || '/assets/images/HIPC_DEFAULT_PROFILE.png'} width={60} />
       </button>
 
-      {/* 오버레이 */}
       {isOpen && <div className='fixed inset-0 bg-black/40 z-40 md:hidden' onClick={() => setIsOpen(false)} />}
 
-      {/* 사이드 메뉴 */}
       <div
         className={`
           flex flex-col 
-          fixed top-0 right-0 h-full w-full bg-background text-text z-50 
+          fixed top-0 right-0 h-full w-[80%] bg-background text-text z-50 
           transform transition-transform duration-300 ease-in-out
           ${isOpen ? 'translate-x-0' : 'translate-x-full'}
           md:hidden
@@ -89,26 +87,25 @@ function MobileNavMenu() {
                 )}
               </li>
             ))}
+            <li className='p-2 pt-4 border-t'>
+              {user ? (
+                <LogoutButton />
+              ) : (
+                <button
+                  onClick={() => {
+                    router.push('/login?modal=login')
+                    setIsOpen(false)
+                  }}
+                  className='w-full py-2 px-4 bg-background text-text rounded-lg'
+                >
+                  로그인
+                </button>
+              )}
+            </li>
           </ul>
-
-          <div className='p-4 border-t flex flex-col gap-y-4'>
-            {user ? (
-              <LogoutButton />
-            ) : (
-              <button
-                onClick={() => {
-                  router.push('/login?modal=login')
-                  setIsOpen(false)
-                }}
-                className='w-full py-2 px-4 bg-background text-text rounded-lg'
-              >
-                로그인
-              </button>
-            )}
-          </div>
         </nav>
       </div>
-    </>
+    </div>
   )
 }
 

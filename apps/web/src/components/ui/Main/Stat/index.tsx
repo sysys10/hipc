@@ -62,7 +62,7 @@ const item = {
 
 const StatGrid = () => {
   return (
-    <motion.div className='grid grid-cols-2 gap-4 md:gap-6' variants={container} initial='hidden' animate='show'>
+    <motion.div className='grid grid-cols-2 gap-4 md:gap-6 max-w-3xl' variants={container} initial='hidden' animate='show'>
       {statsData.map((stat) => (
         <motion.div key={stat.title} variants={item}>
           <StatBox title={stat.title} value={stat.value} unit={stat.unit || ''} variant={stat.color as 'yellow' | 'red' | 'green' | 'blue' | 'orange'} icon={stat.icon} />

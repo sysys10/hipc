@@ -1,12 +1,28 @@
+'use client'
+
 import { NavigationBarLists } from '@/constants'
 import Link from 'next/link'
+import { useEffect, useMemo, useState } from 'react'
 
 import { MobileNavMenu } from './MobileNav'
 import { ProfileNav } from './ProfileNav'
 
-export default async function NavigationBar() {
+function useYScroll() {
+  const [y, setY] = useState(0)
+  useEffect(() => {
+    const handleScroll = () => setY(window.scrollY)
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  return y
+}
+
+export default function NavigationBar() {
+  const y = useYScroll()
+  const navStyle = useMemo(() => (y > 64 ? 'shadow-inset-b bg-white text-black' : 'bg-transparent text-black'), [y])
+
   return (
-    <nav className='h-navbar-height fixed top-0 flex w-full bg-background-navbar text-text-navbar z-10'>
+    <nav className={`h-navbar-height fixed top-0 flex w-full z-10 ${navStyle}`}>
       <div className='px-6 md:px-10 h-full w-full mx-auto flex justify-between items-center'>
         <div className='flex items-center h-full'>
           <Link href='/' className='relative h-full flex items-center text-2xl md:text-3xl font-bold font-cafe24'>
@@ -27,10 +43,12 @@ export default async function NavigationBar() {
                   )}
                 </div>
                 {item?.dropdownList && (
-                  <div className='absolute invisible opacity-0 group-hover:visible bg-background-navbar group-hover:opacity-100 flex flex-col top-[var(--navbar-height)] w-32 transition-opacity duration-300 rounded-b-md'>
+                  <div
+                    className={`absolute invisible opacity-0 group-hover:visible group-hover:opacity-100 flex flex-col top-[var(--navbar-height)] w-40 transition-opacity duration-300 rounded-b-md ${navStyle}`}
+                  >
                     <div className='flex flex-col w-full'>
                       {item.dropdownList?.map((dropdownItem) => (
-                        <div key={dropdownItem.name} className='flex text-sm w-full bg-transparent p-3'>
+                        <div key={dropdownItem.name} className='flex text-sm w-full p-3'>
                           <Link href={dropdownItem.path} className='w-full font-semibold hover:underline'>
                             {dropdownItem.name}
                           </Link>

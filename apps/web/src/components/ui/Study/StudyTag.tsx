@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 import { Badge } from '@packages/ui/components/badge'
 import { Skeleton } from '@packages/ui/components/skeleton'
-import cn from '@packages/ui/lib/utils'
+import { cn } from '@packages/ui/lib/utils'
 
 export function StudyTag({ filter }: { filter: string }) {
   const [tags, setTags] = useState<string[]>([])

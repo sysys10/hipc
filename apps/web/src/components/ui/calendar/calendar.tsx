@@ -10,7 +10,7 @@ import { getDataFromTable } from '@utils'
 import { CustomCalendar } from './CustomCalendar'
 import './calendar.css'
 
-export function CalendarView() {
+export default function Calendar() {
   const supabase = supabaseClient()
   const [events, setEvents] = useState<Event[]>([])
 
@@ -31,7 +31,7 @@ export function CalendarView() {
     fetchEvent()
   }, [supabase])
   return (
-    <div className='calendar-wrapper h-full max-w-5xl mx-auto w-full'>
+    <div className='calendar-wrapper h-full max-w-5xl mx-auto w-full px-2'>
       <div className='calendar-container rounded-md h-full'>
         <CustomCalendar events={events} />
       </div>

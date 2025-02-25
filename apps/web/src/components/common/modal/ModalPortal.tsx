@@ -3,7 +3,7 @@
 import { useMounted } from '@/hooks'
 import { createPortal } from 'react-dom'
 
-import cn from '@packages/ui/lib/utils'
+import { cn } from '@packages/ui/lib/utils'
 
 import { HIPCicon } from '../icon'
 

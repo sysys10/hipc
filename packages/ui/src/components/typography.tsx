@@ -1,4 +1,4 @@
-import cn from '@packages/ui/lib/utils'
+import { cn } from '@packages/ui/lib/utils'
 
 interface HeaderProps extends React.HTMLAttributes<HTMLHeadingElement> {
   children: React.ReactNode
@@ -14,7 +14,7 @@ export function H0({ children, className, ...props }: HeaderProps) {
 
 export function H1({ children, className, ...props }: HeaderProps) {
   return (
-    <h1 className={cn('scroll-m-20 text-3xl font-extrabold tracking-tight md:text-4xl lg:text-5xl', className)} {...props}>
+    <h1 className={cn('scroll-m-20 text-3xl font-extrabold tracking-tight md:text-5xl lg:text-6xl', className)} {...props}>
       {children}
     </h1>
   )
