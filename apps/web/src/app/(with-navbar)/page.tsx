@@ -8,7 +8,7 @@ import { Suspense, lazy } from 'react'
 
 const Map = lazy(() => import('@/components/ui/Map/Map'))
 const Members = lazy(() => import('@/components/ui/Members'))
-const AnimatedBanner = lazy(() => import('@/components/ui/Main/AnimatedBanenr'))
+const Banner = lazy(() => import('@/components/ui/Main/Banner'))
 
 export default async function Home() {
   return (
@@ -30,7 +30,7 @@ export default async function Home() {
         <HIPCFeatures />
       </div>
       <InfiniteText text='Hanyang Infosys ProblemSolving Club' />
-      <AnimatedBanner />
+      <Banner />
 
       <div className='flex flex-col h-screen max-w-5xl mx-auto mt-10 md:mt-20'>
         <h1 className='text-4xl text-center font-semibold md:mb-10 mb-6 text-infosys-purple'>스터디원</h1>
