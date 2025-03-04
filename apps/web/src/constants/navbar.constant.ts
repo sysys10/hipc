@@ -21,10 +21,7 @@ const NavigationBarLists = [
     //   // { name: '결산안', path: '/notice/financial' }
     // ]
   },
-  {
-    name: '게시글',
-    path: '/board/1'
-  },
+
   {
     name: '활동',
     dropdownList: [
