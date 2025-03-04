@@ -14,18 +14,10 @@ export default async function Home() {
   return (
     <div className='w-full h-full justify-center items-center cursor-default font-pretendard'>
       <Landing />
-      {/* <GradientText /> */}
-
-      {/* <div className='flex flex-col h-[40rem] px-2 md:px-4 md:h-[50rem] mt-10 md:mt-16'>
-        <h1 className='text-3xl text-center font-semibold md:mb-8 mb-4 text-infosys-purple'>HIPC 일정</h1>
-        <Suspense fallback={<div />}>
-          <CalendarView />
-        </Suspense>
-      </div> */}
       <div className='flex flex-col mx-auto mt-16 md:mt-32 mb-8'>
-        <div className='mb-8 space-y-2'>
-          <h1 className='md:text-4xl text-3xl text-center font-semibold text-infosys-purple'>Features</h1>
-          <p className='text-center'>HIPC는 1일 1 문제 해결을 통해 알고리즘 실력을 향상시키는 것을 목표로 합니다.</p>
+        <div className='mb-8 space-y-2 md:text-center text-left px-6'>
+          <h1 className='md:text-4xl text-3xl font-semibold text-infosys-purple'>Features</h1>
+          <p>HIPC는 1일 1 문제 해결을 통해 알고리즘 실력을 향상시키는 것을 목표로 합니다.</p>
         </div>
         <HIPCFeatures />
       </div>
@@ -34,14 +26,14 @@ export default async function Home() {
         <Banner />
       </div>
 
-      <div className='flex flex-col h-fit max-w-5xl mx-auto mt-10 md:mt-20'>
-        <h1 className='md:text-4xl text-3xl text-center font-semibold md:mb-8 mb-4 text-infosys-purple'>스터디원</h1>
+      <div className='flex flex-col h-fit max-w-5xl mx-auto min-h-screen mt-10 md:mt-20'>
+        <h1 className='md:text-4xl text-3xl md:text-center text-left px-6 font-semibold md:mb-8 mb-2 text-infosys-purple '>스터디원</h1>
         <Suspense fallback={<div />}>
           <Members />
         </Suspense>
       </div>
       <div className='flex flex-col h-screen mt-10 md:mt-20'>
-        <h1 className='md:text-4xl text-3xl text-center font-semibold md:mb-8 mb-4 text-infosys-purple'>일정</h1>
+        <h1 className='md:text-4xl text-3xl md:text-center text-left px-8 font-semibold md:mb-8 mb-4 text-infosys-purple'>일정</h1>
         <Suspense fallback={<div />}>
           <Calendar />
         </Suspense>

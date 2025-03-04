@@ -43,12 +43,12 @@ const StatBox = ({ title, value, unit, variant, icon }: StatBoxProps) => {
           <div className={`h-10 w-10 rounded-full ${colors.bg} flex items-center justify-center`}>
             <span className={colors.text}>{icon}</span>
           </div>
-          <span className={`text-2xl xl:text-3xl font-bold ${colors.text}`}>{typeof value === 'number' ? value.toLocaleString() : value}</span>
+          <span className={`text-xl xl:text-3xl font-bold ${colors.text}`}>{typeof value === 'number' ? value.toLocaleString() : value}</span>
         </div>
       ) : (
         <div className='flex items-baseline gap-2'>
-          <span className={`text-3xl xl:text-4xl font-bold ${colors.text}`}>{typeof value === 'number' ? value.toLocaleString() : value}</span>
-          {unit && <span className='text-white/60 xl:text-3xl text-'>{unit}</span>}
+          <span className={`text-xl xl:text-3xl font-bold ${colors.text}`}>{typeof value === 'number' ? value.toLocaleString() : value}</span>
+          {unit && <span className='text-white/60 xl:text-3xl'>{unit}</span>}
         </div>
       )}
     </div>
