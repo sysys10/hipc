@@ -13,13 +13,34 @@ export async function GET() {
     const formattedDate = date.toISOString().split('T')[0]
     data?.forEach(async (user) => {
       const { data } = await axios.get(`https://solved.ac/api/v3/user/show?handle=${user.boj_handle}`)
-      await supabase.from('solved_problems').insert({
+
+      const isExist = await supabase.from('solved_problems_daily').select('*').eq('boj_handle', data.handle).single()
+
+      await supabase.from('solved_problems_daily').insert({
         boj_handle: data.handle,
         solved_cnt: data.solvedCount,
         rating: data.rating,
         user_id: user.user_id,
         date: formattedDate
       })
+
+      if (isExist.data) {
+        if (data.solvedCount <= user.solved_cnt) {
+          await supabase
+            .from('study_users')
+            .update({
+              fine: user.fine + 1000
+            })
+            .eq('user_id', user.user_id)
+        }
+      }
+      await supabase
+        .from('study_users')
+        .update({
+          solved_cnt: data.solvedCount,
+          boj_tier: data.tier
+        })
+        .eq('user_id', user.user_id)
     })
 
     return NextResponse.json({ message: 'User data fetched successfully', data })
