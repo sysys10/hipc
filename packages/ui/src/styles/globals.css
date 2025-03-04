@@ -61,36 +61,17 @@
   }
 }
 
-.dark {
-  --main-bg: #003b4a;
-  --infosys-blue: #71b0f7;
-
-  --navbar-background: #0f0f0f;
-  --navbar-text: #d9d9d9;
-
-  --background-1: #000000;
-  --background-2: #0f0f0f;
-  --background-3: #a0a0a0;
-  --background-main: #252b37;
-  --text-1: #ececec;
-  --text-2: #d9d9d9;
-  --text-3: #acacac;
-  --text-4: #595959;
-  --background-card: #495057;
-
-  --border: #666666;
-  --button-disabled: #eaeaea;
-  --text-disabled: #4f4f4f;
-  --infosys-purple: #c2c5fa;
+body {
+  font-synthesis: none;
 }
 
 * {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 *::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none;
 }
 
 #modal-root {

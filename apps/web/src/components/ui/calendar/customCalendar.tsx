@@ -5,9 +5,9 @@ import { ko } from 'date-fns/locale'
 import { Calendar, ToolbarProps, dateFnsLocalizer } from 'react-big-calendar'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 
-import { Event } from '@types'
-
 import { Popover, PopoverContent, PopoverTrigger } from '@packages/ui/components/popover'
+
+import { Event } from './types/calendar.type'
 
 const locales = {
   ko: ko

@@ -6,7 +6,7 @@ const config = {
   theme: {
     extend: {
       fontSize: {
-        'headline-4': ['2.5rem', '1.2'] // 40px with 1.2 line height
+        'headline-4': ['2.5rem', '1.2']
       },
       aspectRatio: {
         '10/16': '10 / 16',
@@ -25,8 +25,6 @@ const config = {
       },
       fontFamily: {
         cafe24: ['var(--font-cafe24)'],
-        nanum: ['var(--font-nanum)'],
-        blackhans: ['var(--font-blackhans)'],
         pretendard: ['var(--font-pretendard)']
       },
       colors: {

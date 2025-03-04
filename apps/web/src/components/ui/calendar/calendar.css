@@ -97,7 +97,8 @@
 
 /* 오늘 셀 하이라이트 */
 .rbc-today {
-  background-color: #f3f4f6 !important;
+  background-color: #f5f5f5 !important;
+  border-radius: 0 !important;
 }
 
 /* 반응형 스타일링 */
@@ -115,6 +116,9 @@
   .rbc-event-content {
     font-size: 0.75rem !important;
   }
+}
+.rbc-off-range-bg {
+  background-color: #f8f9fa !important;
 }
 
 /* 선택 스타일링 */

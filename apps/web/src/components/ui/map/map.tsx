@@ -1,6 +1,7 @@
 import { KakaoMap } from './KakaoMap'
+import { MAP } from './map.constant'
 
-export default function Map() {
+export default async function Map() {
   return (
     <div className='w-full max-w-3xl mx-auto px-4'>
       <div className='w-full aspect-video rounded-lg overflow-hidden shadow-lg'>
@@ -10,20 +11,18 @@ export default function Map() {
       <div className='space-y-6 pt-10'>
         <div>
           <h3 className='text-xl font-bold mb-2'>주소</h3>
-          <p className='text-gray-600'>[00000]</p>
-          <p className='text-gray-600'>서울특별시 성동구 000,</p>
-          <p className='text-gray-600'>한양대학교 it/bt관 2xx호, 정보시스템학과 과방</p>
+          <p className='text-gray-600'>{MAP.address}</p>
+          <p className='text-gray-600'>{MAP.place}</p>
         </div>
 
         <div>
           <h3 className='text-xl font-bold mb-2'>이메일</h3>
-          <p className='text-gray-600'>ys1014@hanyang.ac.kr</p>
+          <p className='text-gray-600'>{MAP.email}</p>
         </div>
 
         <div>
           <h3 className='text-xl font-bold mb-2'>문의하기</h3>
-          <p className='text-gray-600'>스터디 개설 혹은 벌금, 기타 문의사항은 이메일로 연락 부탁드립니다.</p>
-          <p className='text-gray-600'>채널톡을 이용한다면 더욱 빠르게 답변을 받으실 수 있습니다.</p>
+          <p className='text-gray-600'>{MAP.voc}</p>
         </div>
       </div>
     </div>

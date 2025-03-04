@@ -1,19 +1,14 @@
-'use client'
-
+import { getDataFromTable } from '@/utils'
 import supabaseClient from '@/utils/supabase/supabase'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useEffect } from 'react'
 
-import { Event } from '@types'
+import { Event } from '../types/calendar.type'
 
-import { getDataFromTable } from '@utils'
-
-import { CustomCalendar } from './CustomCalendar'
-import './calendar.css'
-
-export default function Calendar() {
+export const useCalendarEvent = () => {
   const supabase = supabaseClient()
-  const [events, setEvents] = useState<Event[]>([])
 
+  const [events, setEvents] = useState<Event[]>([])
   useEffect(() => {
     async function fetchEvent() {
       try {
@@ -30,11 +25,6 @@ export default function Calendar() {
     }
     fetchEvent()
   }, [supabase])
-  return (
-    <div className='calendar-wrapper h-full max-w-5xl mx-auto w-full px-2'>
-      <div className='calendar-container rounded-md h-full'>
-        <CustomCalendar events={events} />
-      </div>
-    </div>
-  )
+
+  return { events }
 }

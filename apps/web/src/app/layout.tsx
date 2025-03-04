@@ -1,29 +1,10 @@
 import { AuthProvider } from '@components/providers/nextAuthProvider'
-// import { ThemeProvider } from '@components/providers/themeProvider'
 import type { Metadata } from 'next'
-import { Black_Han_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 import { ToastContainer } from 'react-toastify'
 
 import '@packages/ui/globals.css'
 
-// const nanumSquareNeo = localFont({
-//   src: [
-//     {
-//       path: '../../../packages/shared/fonts/nanumgothic/NanumSquareNeo-Variable.woff2',
-//       weight: '45 920',
-//       style: 'normal'
-//     }
-//   ],
-//   variable: '--font-nanum'
-// })
-
-const blackHanSans = Black_Han_Sans({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-blackhans'
-})
 const cafe24ssurround = localFont({
   src: [
     {
@@ -44,16 +25,6 @@ const pretendard = localFont({
   ],
   variable: '--font-pretendard'
 })
-const nanumSquareNeo = localFont({
-  src: [
-    {
-      path: '../../../../packages/shared/fonts/nanumgothic/NanumSquareNeo-Variable.woff2',
-      weight: '45 920',
-      style: 'normal'
-    }
-  ],
-  variable: '--font-nanum'
-})
 export const metadata: Metadata = {
   title: 'HIPC'
 }
@@ -65,9 +36,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang='ko' suppressHydrationWarning>
-      <body
-        className={`${pretendard.variable} ${blackHanSans.variable} ${nanumSquareNeo.variable} ${cafe24ssurround.variable} font-pretendard bg-background antialiased min-h-screen`}
-      >
+      <body className={`${pretendard.variable} ${cafe24ssurround.variable} bg-background min-h-screen`}>
         <AuthProvider>{children}</AuthProvider>
         <ToastContainer className={'text-base'} position='bottom-right' />
         <div id='modal-root' />

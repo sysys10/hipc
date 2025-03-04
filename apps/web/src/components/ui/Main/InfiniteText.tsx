@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 export default function InfiniteText({ text, direction = 'right' }: { text: string; direction?: 'right' | 'left' }) {
   return (
-    <motion.div className='overflow-hidden whitespace-nowrap mb-8 w-full'>
+    <motion.div className='overflow-hidden whitespace-nowrap w-full'>
       <div className='relative inline-flex'>
         {[...Array(5)].map((_, index) => (
           <motion.div
