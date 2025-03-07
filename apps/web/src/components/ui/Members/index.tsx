@@ -12,7 +12,7 @@ export default function Members() {
 
   return (
     <div className='h-fit w-full px-2 pt-4'>
-      <Table className='w-full text-sm whitespace-nowrap overflow-x-auto'>
+      <Table className='w-full text-lg whitespace-nowrap overflow-x-auto'>
         <TableHeader>
           <TableRow>
             <TableHead>NO</TableHead>

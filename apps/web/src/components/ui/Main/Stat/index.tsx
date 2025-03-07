@@ -15,7 +15,7 @@ const statsData: {
     title: '전체 해결 문제',
     value: 30506,
     unit: '문제',
-    color: 'blue'
+    color: 'yellow'
   },
   {
     title: '이번 분기 해결',
@@ -27,6 +27,7 @@ const statsData: {
     title: '분기 문제 해결 1위',
     value: 'ys10',
     color: 'green',
+
     icon: '👑'
   },
   {

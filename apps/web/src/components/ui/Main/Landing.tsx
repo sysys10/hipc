@@ -3,9 +3,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-// import { AnimatedCodeEditor } from './AnimatedCodeEditor'
-import StatGrid from './Stat'
-
 export default async function Landing() {
   return (
     <div className='min-h-screen relative'>
@@ -16,9 +13,9 @@ export default async function Landing() {
         <div className='w-full'>
           <div className='text-center md:text-start'>
             <h1 className='md:text-[3.5rem] font-extrabold text-4xl mb-6 md:!leading-[60px]'>
-              매일 한 걸음씩
+              매일 한 걸음씩.
               <br />
-              함께 성장하는 PS 커뮤니티
+              함께 성장하는 알고리즘 커뮤니티.
             </h1>
             <p className='text-base'>Hanyang University Infosys Problem-Solving Club HIPC</p>
             <div className='mt-10 space-x-2'>
@@ -34,13 +31,10 @@ export default async function Landing() {
               </Link>
             </div>
           </div>
-
           {/* <div className='bg-white/40 h-[20rem] absolute right-10 bottom-10 rounded-xl w-[30rem]'>
             <AnimatedCodeEditor />
           </div> */}
-          <div className='mt-10 mb-5'>
-            <StatGrid />
-          </div>
+          {/* <StatGrid /> */}
         </div>
         <div className='max-w-xl h-96 w-full flex items-center justify-center relative' style={{ minHeight: '384px' }}>
           {/* 이미지에 placeholder와 priority 추가 */}
